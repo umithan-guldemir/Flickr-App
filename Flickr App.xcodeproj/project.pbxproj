@@ -56,15 +56,47 @@
 		0F0B3D1E28946D8B00B17032 /* Flickr App */ = {
 			isa = PBXGroup;
 			children = (
+				0F0B3D3528946DF500B17032 /* Supporting Files */,
+				0F0B3D3428946DEC00B17032 /* Screens */,
+				0F0B3D3328946DE200B17032 /* App */,
+			);
+			path = "Flickr App";
+			sourceTree = "<group>";
+		};
+		0F0B3D3328946DE200B17032 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				0F0B3D1F28946D8B00B17032 /* AppDelegate.swift */,
 				0F0B3D2128946D8B00B17032 /* SceneDelegate.swift */,
-				0F0B3D2328946D8B00B17032 /* ViewController.swift */,
-				0F0B3D2528946D8B00B17032 /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0F0B3D3428946DEC00B17032 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0F0B3D3628946E6200B17032 /* RecentPhotos */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0F0B3D3528946DF500B17032 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				0F0B3D2828946D8C00B17032 /* Assets.xcassets */,
 				0F0B3D2A28946D8C00B17032 /* LaunchScreen.storyboard */,
 				0F0B3D2D28946D8C00B17032 /* Info.plist */,
 			);
-			path = "Flickr App";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F0B3D3628946E6200B17032 /* RecentPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				0F0B3D2328946D8B00B17032 /* ViewController.swift */,
+				0F0B3D2528946D8B00B17032 /* Main.storyboard */,
+			);
+			path = RecentPhotos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +323,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 629GLD2B37;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Flickr App/Info.plist";
+				INFOPLIST_FILE = "Flickr App/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +339,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,10 +352,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 629GLD2B37;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Flickr App/Info.plist";
+				INFOPLIST_FILE = "Flickr App/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +368,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
