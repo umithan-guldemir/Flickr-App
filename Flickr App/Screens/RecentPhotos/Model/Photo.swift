@@ -10,28 +10,28 @@ struct Photo: Codable {
 
 // MARK: - PhotoElement
 struct PhotoElement: Codable {
-    let id, owner, secret, server: String
-    let farm: Int
-    let title: String
-    let ispublic, isfriend, isfamily: Int
-    let license: String
-    let photoDescription: Description
-    let lastupdate, ownername, iconserver: String
-    let iconfarm: Int
-    let views, tags, machineTags: String
-    let latitude, longitude, accuracy: Accuracy
-    let context: Int
-    let placeID, woeid: String?
+    let id, owner, secret, server: String?
+    let farm: Int?
+    let title: String?
+    let ispublic, isfriend, isfamily: Int?
+    let license: String?
+    let photoDescription: Description?
+    let lastupdate, ownername, iconserver: String?
+    let iconfarm: Int?
+    let views, tags, machineTags: String?
+    let latitude, longitude, accuracy: Accuracy?
+    let context: Int?
+    let placeID, woeid: String??
     let geoIsPublic, geoIsContact, geoIsFriend, geoIsFamily: Int?
-    let media: Media
-    let mediaStatus: MediaStatus
-    let urlSq: String
-    let heightSq, widthSq: Int
-    let urlT: String
-    let heightT, widthT: Int
+    let media: Media?
+    let mediaStatus: MediaStatus?
+    let urlSq: String?
+    let heightSq, widthSq: Int?
+    let urlT: String?
+    let heightT, widthT: Int?
     let urlS: String?
     let heightS, widthS: Int?
-    let urlQ: String
+    let urlQ: String?
     let heightQ, widthQ: Int
     let urlM: String?
     let heightM, widthM: Int?
@@ -139,6 +139,20 @@ enum MediaStatus: String, Codable {
 enum Originalformat: String, Codable {
     case jpg = "jpg"
     case png = "png"
+}
+
+extension PhotoElement {
+    var buddyIconUrl: String? {
+        if let iconserver = self.iconserver,
+           NSString(string: iconserver).intValue > 0,
+           let iconfarm = self.iconfarm,
+           let nsid = self.owner {
+           return "https://farm\(iconfarm).staticflickr.com/\(iconserver)/buddyicons/\(nsid).jpg"
+            
+        } else {
+            return "https://www.flickr.com/images/buddyicon.gif" 
+        }
+    }
 }
 
 // MARK: - Description

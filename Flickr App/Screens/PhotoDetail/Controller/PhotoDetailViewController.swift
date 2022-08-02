@@ -9,21 +9,35 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
     
+    var photo: PhotoElement?
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var ownerImageView: UIImageView!
     @IBOutlet weak var ownerNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "photo detail"
+        title = photo?.title
+        ownerNameLabel?.text = photo?.ownername
+        descriptionLabel?.text = photo?.photoDescription?.content
         
-        imageView?.backgroundColor = .gray
-        ownerImageView?.backgroundColor = .darkGray
-        ownerNameLabel?.text = "owner name"
-        descriptionLabel?.text = "not a description not a description not a description not a description not a description"
+        ownerImageView.layer.cornerRadius = 24.0
+        
+        NetworkManager.shared.fetchImage(with: photo?.buddyIconUrl) { data in
+            self.ownerImageView.image = UIImage(data: data)
+        }
+    
+
+        
+        NetworkManager.shared.fetchImage(with: photo?.urlN) { data in
+            self.imageView.image = UIImage(data: data)
+        }
     }
+    
+
+
     
 
     /*
